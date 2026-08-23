@@ -60,30 +60,6 @@ export function ClientEffects() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cleanups: Array<() => void> = [];
 
-    const secIds = ["capabilities", "process", "projects"];
-    const navLinkEls = Array.from(document.querySelectorAll<HTMLAnchorElement>("#nlinks a"));
-    const navMap: Record<string, HTMLAnchorElement> = {};
-    navLinkEls.forEach((a) => {
-      const id = a.getAttribute("href")?.split("#")[1];
-      if (id) navMap[id] = a;
-    });
-    const secObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            Object.values(navMap).forEach((a) => a.classList.remove("active"));
-            navMap[e.target.id]?.classList.add("active");
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    secIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) secObs.observe(el);
-    });
-    cleanups.push(() => secObs.disconnect());
-
     const revealEls = document.querySelectorAll(".reveal, .lines");
     const revObs = new IntersectionObserver(
       (entries) => {

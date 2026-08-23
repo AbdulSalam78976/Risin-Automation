@@ -61,6 +61,16 @@ export function Process() {
               dangerouslySetInnerHTML={{ __html: "ENGINEERING<br>PHASE 01 / 04" }}
             />
           </div>
+          <div className="mt-10 flex flex-col gap-1 border-t border-navy/10 pt-6">
+            {steps.map((s) => (
+              <div key={s.letter} className="flex items-center gap-3 py-1.5 text-[13px] text-steel">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center border border-navy/15 font-display text-[11px] font-semibold text-navy">
+                  {s.letter}
+                </span>
+                {s.title}
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex flex-col gap-5.5">
           {steps.map((s) => (

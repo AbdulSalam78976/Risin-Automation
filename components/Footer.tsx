@@ -4,19 +4,19 @@ import { Wrap } from "@/components/Wrap";
 
 const columns = [
   {
-    title: "Capabilities",
+    title: "Services",
     links: [
-      { href: "/#capabilities", label: "Entrance Automation" },
-      { href: "/#capabilities", label: "Solar EPC & O&M" },
-      { href: "/#capabilities", label: "Power Infrastructure" },
-      { href: "/#capabilities", label: "Traffic & Road Safety" },
+      { href: "/services", label: "Entrance Automation" },
+      { href: "/services", label: "Solar EPC & O&M" },
+      { href: "/services", label: "Power Infrastructure" },
+      { href: "/services", label: "Traffic & Road Safety" },
     ],
   },
   {
     title: "Company",
     links: [
-      { href: "/#process", label: "Method" },
-      { href: "/#projects", label: "Projects" },
+      { href: "/services", label: "Method" },
+      { href: "/projects", label: "Projects" },
       { href: "/about", label: "About Risin" },
       { href: "/contact", label: "Careers & Contact" },
     ],
@@ -44,39 +44,28 @@ const socials = [
 export function Footer() {
   return (
     <footer>
-  
-      <section className="bg-navy-dark">
+      <section className="border-t border-navy/10 bg-slate">
         <Wrap>
           <div className="grid grid-cols-1 gap-10 py-16 min-[901px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
             <div>
               <Link className="flex items-center gap-2.5" href="/">
-                <div className="inline-block rounded-md bg-white p-1.5">
-                  <Image src="/logo.png" alt="Risin Automation" width={140} height={56} />
-                </div>
+                <Image src="/logo.jpg" alt="Risin Automation" width={140} height={79} className="h-11 w-auto" />
               </Link>
-              <p className="mt-4 max-w-[320px] text-[13.5px] text-white/55">
+              <p className="mt-4 max-w-[320px] text-[13.5px] text-steel">
                 Multi-discipline EPCM systems integrator. Turnkey delivery from design to
                 execution across four technical domains.
-              </p>
-              <p className="mt-4 max-w-[300px] text-[13.5px] text-white/55">
-                Office # 01, 1st Floor, Kashmir Mention Plaza, Commercial Area, Pakistan Town,
-                Islamabad.
-              </p>
-              <p className="mt-2 text-[13.5px] text-white/55">
-                <a href="tel:03325919059" className="hover:text-green">0332-5919059</a>,{" "}
-                <a href="tel:03453164250" className="hover:text-green">0345-3164250</a>
               </p>
             </div>
 
             {columns.map((col) => (
               <div key={col.title}>
-                <h5 className="mb-[18px] font-display text-[10px] uppercase tracking-[0.26em] text-white/70">
+                <h5 className="mb-[18px] font-display text-[10px] uppercase tracking-[0.26em] text-steel-dim">
                   {col.title}
                 </h5>
                 <ul className="space-y-2.5">
                   {col.links.map((l, i) => (
                     <li key={l.label + i}>
-                      <Link href={l.href} className="text-[13.5px] text-white/70 transition-all hover:pl-1.5 hover:text-green">
+                      <Link href={l.href} className="text-[13.5px] text-steel transition-all hover:pl-1.5 hover:text-green-dark">
                         {l.label}
                       </Link>
                     </li>
@@ -86,10 +75,27 @@ export function Footer() {
             ))}
 
             <div>
-              <h5 className="mb-[18px] font-display text-[10px] uppercase tracking-[0.26em] text-white/70">
-                Stay in Touch
+              <h5 className="mb-[18px] font-display text-[10px] uppercase tracking-[0.26em] text-steel-dim">
+                Contact
               </h5>
-              <div className="flex items-center gap-3">
+              <p className="flex max-w-[280px] items-start gap-2.5 text-[13.5px] text-steel">
+                <svg className="mt-0.5 h-4 w-4 shrink-0 text-green" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Office # 01, 1st Floor, Kashmir Mention Plaza, Commercial Area, Pakistan Town,
+                Islamabad.
+              </p>
+              <p className="mt-2.5 flex items-center gap-2.5 text-[13.5px] text-steel">
+                <svg className="h-4 w-4 shrink-0 text-green" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 2 6a2 2 0 0 1 2-2Z" />
+                </svg>
+                <span>
+                  <a href="tel:03325919059" className="hover:text-green-dark">0332-5919059</a>,{" "}
+                  <a href="tel:03453164250" className="hover:text-green-dark">0345-3164250</a>
+                </span>
+              </p>
+              <div className="mt-4 flex items-center gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
@@ -108,15 +114,14 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 py-5 font-display text-[10px] uppercase tracking-[0.18em] text-white/50">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-navy/10 py-5 font-display text-[10px] uppercase tracking-[0.18em] text-steel-dim">
             <span>
               © <span id="yr">2026</span> RISIN AUTOMATION — ALL RIGHTS RESERVED
             </span>
             <div className="flex flex-wrap gap-6">
-              <Link href="/privacy" className="hover:text-green">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-green">Terms &amp; Conditions</Link>
+              <Link href="/privacy" className="hover:text-green-dark">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-green-dark">Terms &amp; Conditions</Link>
             </div>
-          
           </div>
         </Wrap>
       </section>
