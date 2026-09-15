@@ -10,6 +10,7 @@ const links = [
   { href: "/services", label: "SERVICES" },
   { href: "/projects", label: "PROJECTS" },
   { href: "/about", label: "ABOUT" },
+  { href: "/insights", label: "INSIGHTS" },
   { href: "/contact", label: "CONTACT" },
 ];
 
@@ -28,13 +29,13 @@ export function Nav() {
       className="sticky top-0 z-[1000] border-b border-navy/10 bg-white/80 backdrop-blur-md transition-colors duration-300 [&.scrolled]:bg-white/95"
       id="nav"
     >
-      <Wrap className="flex h-[var(--navh)] items-center justify-between gap-6">
+      <Wrap className="flex h-[var(--navh)] items-center justify-between gap-4">
         <Link className="flex items-center gap-2.5" href="/" aria-label="Risin Automation home">
-          <Image src="/logo.jpg" alt="Risin Automation" width={420} height={236} priority className="h-16 w-auto" />
+          <Image src="/logo.jpg" alt="Risin Automation" width={420} height={236} priority className="h-14 sm:h-16 w-auto" />
         </Link>
 
         <nav
-          className="fixed inset-x-0 top-[var(--navh)] flex -translate-y-[110%] flex-col items-stretch gap-0.5 border-b border-navy/10 bg-white px-6 pb-[26px] pt-[18px] transition-transform duration-400 ease-[cubic-bezier(.2,.7,.2,1)] [.menu-open_&]:translate-y-0 min-[961px]:static min-[961px]:flex-row min-[961px]:items-center min-[961px]:gap-1.5 min-[961px]:border-b-0 min-[961px]:bg-transparent min-[961px]:px-0 min-[961px]:py-0 min-[961px]:translate-y-0"
+          className="fixed inset-x-0 top-[var(--navh)] flex max-h-[calc(100dvh-var(--navh))] -translate-y-[calc(100%+var(--navh))] flex-col items-stretch gap-0.5 overflow-y-auto border-b border-navy/10 bg-white px-6 pb-[26px] pt-[18px] transition-transform duration-400 ease-[cubic-bezier(.2,.7,.2,1)] [.menu-open_&]:translate-y-0 min-[961px]:static min-[961px]:ml-auto min-[961px]:max-h-none min-[961px]:translate-y-0 min-[961px]:flex-row min-[961px]:items-center min-[961px]:gap-1.5 min-[961px]:overflow-visible min-[961px]:border-b-0 min-[961px]:bg-transparent min-[961px]:px-0 min-[961px]:py-0"
           id="nlinks"
         >
           {links.map((l) => (
@@ -49,14 +50,16 @@ export function Nav() {
           ))}
         </nav>
 
-        <button
-          className="relative h-11 w-11 border border-navy/10 bg-transparent min-[961px]:hidden"
-          id="burger"
-          aria-label="Menu"
-        >
-          <span className="absolute left-[11px] right-[11px] top-4 h-0.5 bg-green transition-all duration-300 [.menu-open_&]:top-5 [.menu-open_&]:rotate-45"></span>
-          <span className="absolute left-[11px] right-[11px] top-[25px] h-0.5 bg-green transition-all duration-300 [.menu-open_&]:top-5 [.menu-open_&]:-rotate-45"></span>
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            className="relative h-11 w-11 border border-navy/10 bg-transparent min-[961px]:hidden"
+            id="burger"
+            aria-label="Menu"
+          >
+            <span className="absolute left-[11px] right-[11px] top-4 h-0.5 bg-green transition-all duration-300 [.menu-open_&]:top-5 [.menu-open_&]:rotate-45"></span>
+            <span className="absolute left-[11px] right-[11px] top-[25px] h-0.5 bg-green transition-all duration-300 [.menu-open_&]:top-5 [.menu-open_&]:-rotate-45"></span>
+          </button>
+        </div>
       </Wrap>
     </header>
   );

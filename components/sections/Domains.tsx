@@ -1,42 +1,176 @@
 import { Wrap } from "@/components/Wrap";
 import { Kick, sectionTitleClass } from "@/components/Kick";
 
-type IconName = "door" | "sun" | "bolt" | "signal";
+/* ------------------------------------------------------------------
+   Equipment marks. One per system we supply — drawn to the hardware
+   rather than reused generically, so the icon carries information.
+------------------------------------------------------------------ */
+type MarkName =
+  | "slidingDoors"
+  | "hermeticDoors"
+  | "platformScreen"
+  | "rooftopSolar"
+  | "vfdPump"
+  | "battery"
+  | "substation"
+  | "scada"
+  | "transformer"
+  | "trafficSignal"
+  | "streetLight"
+  | "fireProtection"
+  // discipline emblems
+  | "door"
+  | "sun"
+  | "bolt"
+  | "signal";
 
-function ServiceIcon({ name }: { name: IconName }) {
-  const common = {
-    className: "h-4 w-4 shrink-0 text-green",
+function Mark({ name, className = "h-5 w-5" }: { name: MarkName; className?: string }) {
+  const p = {
+    className: `${className} shrink-0`,
     fill: "none",
     stroke: "currentColor",
-    strokeWidth: 1.75,
+    strokeWidth: 1.6,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     viewBox: "0 0 24 24",
+    "aria-hidden": true,
   };
   switch (name) {
+    /* --- Smart entrance --- */
+    case "slidingDoors": // frame, two leaves, travel direction
+      return (
+        <svg {...p}>
+          <rect x="3" y="3" width="18" height="18" rx="1" />
+          <path d="M12 3v18" />
+          <path d="M9 12H5.5M7 10.2 5.2 12 7 13.8" />
+          <path d="M15 12h3.5M17 10.2 18.8 12 17 13.8" />
+        </svg>
+      );
+    case "hermeticDoors": // sealed leaf pair (double gasket line) + clinical cross
+      return (
+        <svg {...p}>
+          <rect x="4" y="3" width="16" height="18" rx="1" />
+          <path d="M10.8 3v18M13.2 3v18" />
+          <path d="M7 9h2.2M8.1 7.9v2.2" />
+        </svg>
+      );
+    case "platformScreen": // platform edge barriers with door gaps
+      return (
+        <svg {...p}>
+          <path d="M2 21h20" />
+          <rect x="3" y="7" width="5" height="11" />
+          <rect x="10" y="7" width="4" height="11" />
+          <rect x="16" y="7" width="5" height="11" />
+          <path d="M2 4h20" />
+        </svg>
+      );
+
+    /* --- Solar --- */
+    case "rooftopSolar": // array mounted on a roof plane
+      return (
+        <svg {...p}>
+          <path d="M2 11 12 3.5 22 11" />
+          <rect x="6.5" y="13" width="11" height="6.5" />
+          <path d="M6.5 16.25h11M10.2 13v6.5M13.8 13v6.5" />
+        </svg>
+      );
+    case "vfdPump": // water column over a pump base
+      return (
+        <svg {...p}>
+          <path d="M12 2.5s3.8 4.7 3.8 7.2a3.8 3.8 0 0 1-7.6 0c0-2.5 3.8-7.2 3.8-7.2Z" />
+          <path d="M5 21h14" />
+          <path d="M8.5 21v-3.2M15.5 21v-3.2" />
+        </svg>
+      );
+    case "battery": // cell + charge
+      return (
+        <svg {...p}>
+          <rect x="2" y="7" width="17" height="10" rx="1.5" />
+          <path d="M21.5 10.2v3.6" />
+          <path d="M11.4 9.3 8.9 12.6h3L10.4 15.6" />
+        </svg>
+      );
+
+    /* --- Power --- */
+    case "substation": // transmission pylon
+      return (
+        <svg {...p}>
+          <path d="M12 2.5v19" />
+          <path d="M5.5 21.5 12 7.5l6.5 14" />
+          <path d="M7.8 12.5h8.4M9.3 16.5h5.4" />
+          <path d="M8.5 5.5h7" />
+        </svg>
+      );
+    case "scada": // supervisory screen with trend
+      return (
+        <svg {...p}>
+          <rect x="2" y="4" width="20" height="13" rx="1.5" />
+          <path d="M8.5 21h7M12 17v4" />
+          <path d="M5.8 12.5 9 9.3l2.4 2.4 4.8-4.8" />
+        </svg>
+      );
+    case "transformer": // twin windings on a core
+      return (
+        <svg {...p}>
+          <rect x="2.5" y="7" width="7" height="10" rx="3.5" />
+          <rect x="14.5" y="7" width="7" height="10" rx="3.5" />
+          <path d="M9.5 12h5" />
+          <path d="M6 4.5v2.5M18 4.5v2.5" />
+        </svg>
+      );
+
+    /* --- Traffic & safety --- */
+    case "trafficSignal": // three-aspect signal head
+      return (
+        <svg {...p}>
+          <rect x="7" y="2" width="10" height="17" rx="2" />
+          <circle cx="12" cy="6.5" r="1.4" />
+          <circle cx="12" cy="10.5" r="1.4" />
+          <circle cx="12" cy="14.5" r="1.4" />
+          <path d="M12 19v3M9 22h6" />
+        </svg>
+      );
+    case "streetLight": // pole, outreach arm, luminaire
+      return (
+        <svg {...p}>
+          <path d="M5 21.5V4h6.5A4.5 4.5 0 0 1 16 8.5" />
+          <path d="M13.2 8.5h5.6l-1.4 3.4h-2.8z" />
+          <path d="M3 21.5h4" />
+          <path d="M16 15.2v1.6" />
+        </svg>
+      );
+    case "fireProtection": // flame within a protective shield
+      return (
+        <svg {...p}>
+          <path d="M12 2.2 4.5 5.4v5.9c0 4.7 3.2 8.2 7.5 9.9 4.3-1.7 7.5-5.2 7.5-9.9V5.4z" />
+          <path d="M12 9s2.2 2.2 2.2 3.7a2.2 2.2 0 0 1-4.4 0C9.8 11.2 12 9 12 9Z" />
+        </svg>
+      );
+
+    /* --- Discipline emblems --- */
     case "door":
       return (
-        <svg {...common}>
+        <svg {...p}>
           <rect x="5" y="3" width="14" height="18" rx="1" />
           <path d="M9 3v18M15 3v18" />
         </svg>
       );
     case "sun":
       return (
-        <svg {...common}>
+        <svg {...p}>
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
         </svg>
       );
     case "bolt":
       return (
-        <svg {...common}>
+        <svg {...p}>
           <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" />
         </svg>
       );
     case "signal":
       return (
-        <svg {...common}>
+        <svg {...p}>
           <rect x="9" y="2" width="6" height="14" rx="1" />
           <circle cx="12" cy="19" r="2" />
         </svg>
@@ -51,12 +185,10 @@ const domains = [
     icon: "door" as const,
     title: "Smart Entrance Automation",
     body: "Vehicle and pedestrian access engineered as one system — boom barriers, sliding gates, ANPR capture, bollards and access control unified under a single management layer, integrated with your BMS and security stack.",
-    subservices: ["Sliding & Revolving Doors", "Hermetic & ICU Doors", "Platform Screen Doors"],
-    specs: [
-      "ANPR CAPTURE ≥ 99.4% ACCURACY",
-      "BARRIER CYCLE < 1.8 s RATED",
-      "BMS / VMS / ERP INTEGRATION",
-      "FAIL-SAFE, UPS-BACKED LOGIC",
+    subservices: [
+      { name: "Sliding & Revolving Doors", mark: "slidingDoors" as const, note: "High-cycle commercial entrances" },
+      { name: "Hermetic & ICU Doors", mark: "hermeticDoors" as const, note: "Sealed clinical & cleanroom" },
+      { name: "Platform Screen Doors", mark: "platformScreen" as const, note: "Transit platform edge safety" },
     ],
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/1838948a5-380c-4607-944f-c6b18a399895.png",
     alt: "Automated facility entrance with boom barrier and ANPR camera",
@@ -67,12 +199,10 @@ const domains = [
     icon: "sun" as const,
     title: "Renewable Energy · Solar",
     body: "Rooftop and ground-mount solar delivered turnkey: yield simulation, structural and electrical design, procurement, construction and long-term O&M — with bankable performance ratios your CFO can sign.",
-    subservices: ["Rooftop & Ground-Mount Solar", "VFD Solar Pumping", "Inverters & Battery Storage"],
-    specs: [
-      "38.6 MW COMMISSIONED TO DATE",
-      "PERFORMANCE RATIO ≥ 80% ASSURED",
-      "STORAGE-READY DC COUPLED DESIGN",
-      "MNRE / IEC ALIGNED EXECUTION",
+    subservices: [
+      { name: "Rooftop & Ground-Mount Solar", mark: "rooftopSolar" as const, note: "Yield-simulated array design" },
+      { name: "VFD Solar Pumping", mark: "vfdPump" as const, note: "Irrigation & industrial water" },
+      { name: "Inverters & Battery Storage", mark: "battery" as const, note: "Grid-tied, hybrid & backup" },
     ],
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/12bbdaba2-32cd-405e-b281-2ff4d0102297.png",
     alt: "Ground-mount solar farm at golden hour with engineer",
@@ -83,12 +213,10 @@ const domains = [
     icon: "bolt" as const,
     title: "Power Infrastructure Management",
     body: "From HT yard to final circuit — substations, switchgear, DG synchronisation and SCADA kept inside tolerance and on schedule. We design it, build it, then monitor it around the clock.",
-    subservices: ["Substations & Switchgear", "SCADA & Energy Analytics", "Transformer & DG Services"],
-    specs: [
-      "UP TO 33 kV CLASS EXECUTION",
-      "SCADA & ENERGY ANALYTICS",
-      "THERMOGRAPHIC AUDIT PROGRAMS",
-      "PREDICTIVE MAINTENANCE REGIME",
+    subservices: [
+      { name: "Substations & Switchgear", mark: "substation" as const, note: "HT/LT yard design & build" },
+      { name: "SCADA & Energy Analytics", mark: "scada" as const, note: "Remote monitoring & load control" },
+      { name: "Transformer & DG Services", mark: "transformer" as const, note: "Synchronisation & overhauling" },
     ],
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/19e34662f-2370-4cdc-930b-f64160a6f5e5.png",
     alt: "Electrical substation with engineer reviewing switchgear",
@@ -98,13 +226,11 @@ const domains = [
     num: "04",
     icon: "signal" as const,
     title: "Traffic & Road Safety",
-    body: "Adaptive signals, VMS corridors, ANPR enforcement and luminous street furniture that make roads self-explanatory. Engineered to MoRTH and IRC practice, proven on live corridors.",
-    subservices: ["Adaptive Traffic Signals", "Street Lighting", "Fire Protection Systems"],
-    specs: [
-      "ADAPTIVE SIGNAL CONTROL (ATCS)",
-      "SOLAR STUDS & ACTIVE ROAD MARKING",
-      "ANPR-BASED ENFORCEMENT",
-      "MoRTH / IRC COMPLIANT DESIGN",
+    body: "Adaptive signals, VMS corridors, ANPR enforcement and luminous street furniture that make roads self-explanatory. Engineered to NHA and PEC practice, proven on live corridors.",
+    subservices: [
+      { name: "Adaptive Traffic Signals", mark: "trafficSignal" as const, note: "Corridor-synchronised ATCS" },
+      { name: "Street Lighting", mark: "streetLight" as const, note: "LED poles & smart dimming" },
+      { name: "Fire Protection Systems", mark: "fireProtection" as const, note: "Detection & suppression" },
     ],
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/198909bfb-022c-4a1a-acb3-a1ecc5c26506.png",
     alt: "Smart intersection at night with intelligent signals and light trails",
@@ -133,32 +259,50 @@ export function Domains() {
         <div>
           {domains.map((d, i) => (
             <article
-              className="sticky top-[calc(var(--navh)+18px+var(--n)*14px)] mb-6.5 grid min-h-[480px] grid-cols-1 overflow-hidden border border-navy-dark bg-navy text-[#e8ecf1] shadow-[0_-18px_50px_rgba(18,42,61,0.3)] last:mb-0 max-[900px]:static min-[901px]:grid-cols-[1.02fr_.98fr]"
-              style={{ "--n": i } as React.CSSProperties}
+              className="reveal mb-6.5 grid min-h-[480px] grid-cols-1 overflow-hidden border border-navy-dark bg-navy text-[#e8ecf1] shadow-[0_18px_50px_rgba(18,42,61,0.18)] last:mb-0 min-[901px]:grid-cols-[1.02fr_.98fr]"
               key={d.code}
             >
               <div className="relative flex flex-col p-[clamp(28px,3.4vw,52px)]">
-                <span className="absolute right-6 top-4.5 font-display text-[64px] font-bold leading-none text-white/8">{d.num}</span>
-                <h3 className="text-[clamp(1.4rem,2.4vw,2.1rem)] text-white">{d.title}</h3>
-                <p className="mt-3.5 max-w-[520px] text-[15px] text-white/70">{d.body}</p>
+                <span className="absolute right-6 top-4.5 font-display text-[64px] font-bold leading-none text-white/8">
+                  {d.num}
+                </span>
 
-                <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-white/50">Includes</p>
-                <div className="mt-2.5 grid grid-cols-1 gap-2.5 min-[481px]:grid-cols-2">
+                {/* Discipline emblem + title */}
+                <div className="flex items-center gap-3.5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-green/40 bg-green/10 text-green">
+                    <Mark name={d.icon} className="h-5.5 w-5.5" />
+                  </span>
+                  <h3 className="text-[clamp(1.4rem,2.4vw,2.1rem)] text-white">{d.title}</h3>
+                </div>
+
+                <p className="mt-4 max-w-[520px] text-[15px] text-white/70">{d.body}</p>
+
+                {/* Systems we supply — each its own equipment mark */}
+                <p className="mt-7 flex items-center gap-2.5 text-[10px] uppercase tracking-[0.2em] text-white/45">
+                  <span className="h-1.5 w-1.5 bg-green" />
+                  Systems we supply
+                </p>
+                <div className="mt-3 grid grid-cols-1 gap-2.5 min-[481px]:grid-cols-2 min-[1201px]:grid-cols-3">
                   {d.subservices.map((sub) => (
-                    <div key={sub} className="flex items-center gap-2.5 text-[13px] text-white/85">
-                      <ServiceIcon name={d.icon} />
-                      {sub}
+                    <div
+                      key={sub.name}
+                      className="group/tile flex gap-3 border border-white/12 bg-white/[0.03] p-3.5 transition-colors hover:border-green/50 hover:bg-white/[0.06] min-[481px]:flex-col min-[481px]:gap-2.5"
+                    >
+                      <span className="text-green transition-transform duration-300 group-hover/tile:-translate-y-0.5">
+                        <Mark name={sub.mark} className="h-6 w-6" />
+                      </span>
+                      <span>
+                        <span className="block text-[12.5px] font-medium leading-snug text-white">
+                          {sub.name}
+                        </span>
+                        <span className="mt-1 block text-[11px] leading-snug text-white/50">
+                          {sub.note}
+                        </span>
+                      </span>
                     </div>
                   ))}
                 </div>
 
-                <ul className="mt-6.5 grid grid-cols-1 gap-x-5.5 gap-y-2.5 min-[561px]:grid-cols-2">
-                  {d.specs.map((s) => (
-                    <li key={s} className="flex gap-2 border-t border-dashed border-white/14 pt-2.5 text-[11px] tracking-[0.06em] text-white/85 before:content-['▸'] before:text-green">
-                      {s}
-                    </li>
-                  ))}
-                </ul>
                 <a
                   className="mt-auto inline-flex items-center gap-2.5 pt-7 text-[11px] uppercase tracking-[0.2em] text-green [&_.ar]:transition-transform [&_.ar]:duration-300 hover:[&_.ar]:translate-x-1.5"
                   href="/contact"
@@ -166,9 +310,20 @@ export function Domains() {
                   DISCUSS THIS DISCIPLINE <span className="ar">→</span>
                 </a>
               </div>
-              <div className="relative min-h-[300px] overflow-hidden border-t border-white/10 min-[901px]:border-l min-[901px]:border-t-0">
+
+              <div
+                className={`relative min-h-[300px] overflow-hidden border-t border-white/10 min-[901px]:border-t-0 ${
+                  i % 2 === 1
+                    ? "min-[901px]:order-first min-[901px]:border-r"
+                    : "min-[901px]:border-l"
+                }`}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={d.img} alt={d.alt} className="absolute inset-0 h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover" />
+                <img
+                  src={d.img}
+                  alt={d.alt}
+                  className="absolute inset-0 h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover"
+                />
               </div>
             </article>
           ))}

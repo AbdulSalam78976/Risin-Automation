@@ -23,7 +23,7 @@ const services = [
   },
   {
     title: "Traffic & Road Safety",
-    body: "Adaptive signals, VMS corridors and ANPR enforcement engineered to MoRTH and IRC practice.",
+    body: "Adaptive signals, VMS corridors and ANPR enforcement engineered to NHA and PEC practice.",
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/198909bfb-022c-4a1a-acb3-a1ecc5c26506.png",
     alt: "Smart intersection at night with intelligent signals",
   },

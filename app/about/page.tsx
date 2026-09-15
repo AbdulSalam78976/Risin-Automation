@@ -5,7 +5,7 @@ import { Kick, sectionTitleClass } from "@/components/Kick";
 export const metadata: Metadata = {
   title: "About — Risin Automation",
   description:
-    "Founded in 2012, Risin Automation is 85 engineers, designers and field crews delivering multi-discipline EPCM projects from Mumbai.",
+    "Founded in 2012, Risin Automation is 85 engineers, designers and field crews delivering multi-discipline EPCM projects from Islamabad.",
 };
 
 const principles = [
@@ -15,7 +15,7 @@ const principles = [
   { n: "/04", title: "Lifecycle Economics", body: "Decisions optimised for year ten, not just handover day." },
 ];
 
-const certs = ["ISO 9001:2015", "ISO 14001", "ISO 45001", "IEC 61439", "CE MARKED OEMs", "MNRE ALIGNED"];
+const certs = ["ISO 9001:2015", "ISO 14001", "ISO 45001", "IEC 61439", "CE MARKED OEMs", "AEDB APPROVED", "PEC LICENSED"];
 
 const values = [
   {
@@ -60,7 +60,7 @@ export default function AboutPage() {
             className="h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover"
           />
           <span className="absolute bottom-3 left-3.5 border border-white/14 bg-navy-dark/75 px-2.5 py-1.5 text-[9.5px] tracking-[0.2em] text-white">
-            RISIN OPS ROOM — MUMBAI HQ
+            RISIN OPS ROOM — ISLAMABAD HQ
           </span>
         </div>
         <div>
