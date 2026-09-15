@@ -46,6 +46,8 @@ img { display: block; max-width: 100%; }
 .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
+@keyframes marquee-up { to { transform: translateY(-50%); } }
+@keyframes marquee-down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
 @keyframes led-blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
 @keyframes ken-burns { from { transform: scale(1); } to { transform: scale(1.09) translate(1.5%, -1.5%); } }
 @keyframes scan-beam { to { top: 110%; } }

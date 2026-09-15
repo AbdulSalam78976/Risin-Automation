@@ -49,7 +49,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-10 py-16 min-[901px]:grid-cols-[1.4fr_1fr_1fr_1fr]">
             <div>
               <Link className="flex items-center gap-2.5" href="/">
-                <Image src="/logo.jpg" alt="Risin Automation" width={140} height={79} className="h-11 w-auto" />
+                <Image src="/logo.png" alt="Risin Automation" width={400} height={230} priority className="h-14 sm:h-16 w-auto" />
               </Link>
               <p className="mt-4 max-w-[320px] text-[13.5px] text-steel">
                 Multi-discipline EPCM systems integrator. Turnkey delivery from design to
@@ -116,7 +116,7 @@ export function Footer() {
 
           <div className="flex flex-wrap items-center justify-between gap-4 border-t border-navy/10 py-5 font-display text-[10px] uppercase tracking-[0.18em] text-steel-dim">
             <span>
-              © <span id="yr">2026</span> RISIN AUTOMATION — ALL RIGHTS RESERVED
+              © <span id="yr">{new Date().getFullYear()}</span> RISIN AUTOMATION — ALL RIGHTS RESERVED
             </span>
             <div className="flex flex-wrap gap-6">
               <Link href="/privacy" className="hover:text-green-dark">Privacy Policy</Link>

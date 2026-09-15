@@ -31,7 +31,7 @@ export function Nav() {
     >
       <Wrap className="flex h-[var(--navh)] items-center justify-between gap-4">
         <Link className="flex items-center gap-2.5" href="/" aria-label="Risin Automation home">
-          <Image src="/logo.jpg" alt="Risin Automation" width={420} height={236} priority className="h-14 sm:h-16 w-auto" />
+          <Image src="/logo.png" alt="Risin Automation" width={400} height={230} priority className="h-14 sm:h-16 w-auto" />
         </Link>
 
         <nav
