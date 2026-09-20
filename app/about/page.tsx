@@ -39,7 +39,7 @@ const way = [
   },
   {
     title: "Unify",
-    body: "Smart Entrance, Solar, Power and Traffic under one contract, one crew, one point of contact — no vendor ping-pong.",
+    body: "Smart Entrance, Solar, Power, Traffic and Water under one contract, one crew, one point of contact — no vendor ping-pong.",
   },
   {
     title: "Endure",
@@ -51,16 +51,16 @@ export default function AboutPage() {
   return (
     <>
     <section className="border-b border-navy/10 bg-white py-[clamp(72px,10vh,120px)] text-navy" id="about">
-      <Wrap className="grid grid-cols-1 items-center gap-[clamp(40px,5vw,80px)] min-[961px]:grid-cols-[.95fr_1.05fr]">
-        <div className="reveal relative overflow-hidden border border-navy/10">
+      <Wrap className="grid grid-cols-1 items-stretch gap-[clamp(40px,5vw,80px)] min-[961px]:grid-cols-[.95fr_1.05fr]">
+        <div className="reveal relative min-h-[320px] overflow-hidden border border-navy/10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/14a425788-1c31-4eb2-9262-6ac8cbcdf412.png"
-            alt="Risin engineers in the operations control room"
+            src="/images/engineers.jpg"
+            alt="Risin engineers in site uniform reviewing a project drawing together"
             className="h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover"
           />
           <span className="absolute bottom-3 left-3.5 border border-white/14 bg-navy-dark/75 px-2.5 py-1.5 text-[9.5px] tracking-[0.2em] text-white">
-            RISIN OPS ROOM — ISLAMABAD HQ
+            RISIN ENGINEERING TEAM — ISLAMABAD HQ
           </span>
         </div>
         <div>

@@ -2,7 +2,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { ServicesTeaser } from "@/components/sections/ServicesTeaser";
 import { Process } from "@/components/sections/Process";
-import { RegionalMap } from "@/components/sections/RegionalMap";
 import { ProjectsTeaser } from "@/components/sections/ProjectsTeaser";
 import { OemCompliance } from "@/components/sections/OemCompliance";
 import { InsightsTeaser } from "@/components/sections/InsightsTeaser";
@@ -15,7 +14,6 @@ export default function Home() {
       <Stats />
       <ServicesTeaser />
       <Process />
-      <RegionalMap />
       <ProjectsTeaser />
       <OemCompliance />
       <InsightsTeaser />

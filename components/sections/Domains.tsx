@@ -18,11 +18,15 @@ type MarkName =
   | "trafficSignal"
   | "streetLight"
   | "fireProtection"
+  | "weatherStation"
+  | "staffGauge"
+  | "levelAlert"
   // discipline emblems
   | "door"
   | "sun"
   | "bolt"
-  | "signal";
+  | "signal"
+  | "droplet";
 
 function Mark({ name, className = "h-5 w-5" }: { name: MarkName; className?: string }) {
   const p = {
@@ -147,7 +151,44 @@ function Mark({ name, className = "h-5 w-5" }: { name: MarkName; className?: str
         </svg>
       );
 
+    /* --- Water & hydromet --- */
+    case "weatherStation": // AWS mast: anemometer cups, sensor arm, tripod
+      return (
+        <svg {...p}>
+          <path d="M12 21.5V4.6" />
+          <path d="M6.6 6.2h10.8" />
+          <circle cx="5.2" cy="6.2" r="1.5" />
+          <circle cx="18.8" cy="6.2" r="1.5" />
+          <path d="M12 11.6h3.2" />
+          <rect x="15.2" y="9.6" width="3.6" height="4" rx="0.6" />
+          <path d="M8.4 21.5 12 16.2l3.6 5.3" />
+        </svg>
+      );
+    case "staffGauge": // graduated gauge staff standing in water
+      return (
+        <svg {...p}>
+          <path d="M8 2.5v13.5" />
+          <path d="M8 5.2h3.4M8 8.2h3.4M8 11.2h3.4M8 14.2h3.4" />
+          <path d="M2 18.4c2 0 2 1.3 4 1.3s2-1.3 4-1.3 2 1.3 4 1.3 2-1.3 4-1.3" />
+          <path d="M2 21.5c2 0 2-1.3 4-1.3" />
+        </svg>
+      );
+    case "levelAlert": // rising-level warning
+      return (
+        <svg {...p}>
+          <path d="M12 3.4 3.6 17.2h16.8z" />
+          <path d="M12 8.8v3.6M12 14.8h.01" />
+          <path d="M2 20.6c2 0 2 1.2 4 1.2s2-1.2 4-1.2 2 1.2 4 1.2 2-1.2 4-1.2" />
+        </svg>
+      );
+
     /* --- Discipline emblems --- */
+    case "droplet":
+      return (
+        <svg {...p}>
+          <path d="M12 3.2s5.2 5.9 5.2 9.3a5.2 5.2 0 0 1-10.4 0C6.8 9.1 12 3.2 12 3.2Z" />
+        </svg>
+      );
     case "door":
       return (
         <svg {...p}>
@@ -178,7 +219,19 @@ function Mark({ name, className = "h-5 w-5" }: { name: MarkName; className?: str
   }
 }
 
-const domains = [
+type Domain = {
+  code: string;
+  num: string;
+  icon: MarkName;
+  title: string;
+  body: string;
+  subservices: { name: string; mark: MarkName; note: string }[];
+  // Optional: a discipline with no photo yet renders a branded panel instead.
+  img?: string;
+  alt?: string;
+};
+
+const domains: Domain[] = [
   {
     code: "SA-01",
     num: "01",
@@ -235,6 +288,20 @@ const domains = [
     img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/198909bfb-022c-4a1a-acb3-a1ecc5c26506.png",
     alt: "Smart intersection at night with intelligent signals and light trails",
   },
+  {
+    code: "WH-05",
+    num: "05",
+    icon: "droplet",
+    title: "Water & Hydromet",
+    body: "Automatic weather stations and hydrological telemetry, installed and maintained end to end. AWS masts log rainfall, wind speed and direction, temperature, humidity and solar radiation; river, canal and tube-well sites add level and flow. Every site runs on solar with battery backup, backhauls over GSM or satellite, and lands in SCADA with threshold alerting — so a rising level or a dry sensor reaches the operator before it reaches the field.",
+    subservices: [
+      { name: "Automatic Weather Stations", mark: "weatherStation", note: "Rainfall, wind, temp & humidity masts" },
+      { name: "River & Canal Gauging", mark: "staffGauge", note: "Level, flow & discharge telemetry" },
+      { name: "Flood & Level Alerting", mark: "levelAlert", note: "Thresholds, SMS & dashboards" },
+    ],
+    img: "/images/hydromet.webp",
+    alt: "Aerial view of an irrigation canal running between agricultural fields",
+  },
 ];
 
 export function Domains() {
@@ -245,7 +312,7 @@ export function Domains() {
           <div>
             <Kick scramble>01 / CAPABILITIES</Kick>
             <h2 className={`lines ${sectionTitleClass} text-navy`}>
-              <span className="ln"><span>FOUR DISCIPLINES.</span></span>
+              <span className="ln"><span>FIVE DISCIPLINES.</span></span>
               <span className="ln"><span>ONE ACCOUNTABLE PARTNER.</span></span>
             </h2>
           </div>
@@ -318,12 +385,21 @@ export function Domains() {
                     : "min-[901px]:border-l"
                 }`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={d.img}
-                  alt={d.alt}
-                  className="absolute inset-0 h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover"
-                />
+                {d.img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={d.img}
+                    alt={d.alt ?? ""}
+                    className="absolute inset-0 h-full w-full animate-[ken-burns_16s_ease-in-out_infinite_alternate] object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-navy-dark text-green/70">
+                    <Mark name={d.icon} className="h-12 w-12" />
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+                      {d.title}
+                    </span>
+                  </div>
+                )}
               </div>
             </article>
           ))}

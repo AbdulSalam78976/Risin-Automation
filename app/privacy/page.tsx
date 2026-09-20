@@ -42,7 +42,7 @@ const sections: LegalSection[] = [
     title: "3. How We Use Your Information",
     body: (
       <ul>
-        <li>Route your inquiry to the relevant discipline lead (Smart Entrance, Solar, Power Infrastructure or Traffic &amp; Road Safety)</li>
+        <li>Route your inquiry to the relevant discipline lead (Smart Entrance, Solar, Power Infrastructure, Traffic &amp; Road Safety or Water &amp; Hydromet)</li>
         <li>Prepare a scope outline and follow up by phone or email</li>
         <li>Maintain a record of past correspondence for ongoing projects</li>
         <li>Comply with applicable legal obligations</li>

@@ -24,8 +24,8 @@ export function Hero() {
           </h1>
           <p className="my-[26px] max-w-[560px] text-[17px] text-white/78">
             Risin Automation designs, procures, constructs and maintains mission-critical
-            systems across <b className="font-medium text-white">entrance automation, solar energy, power infrastructure and road
-            safety</b> — one accountable partner for the full project lifecycle.
+            systems across <b className="font-medium text-white">entrance automation, solar energy, power infrastructure, road
+            safety, and weather and water telemetry</b> — one accountable partner for the full project lifecycle.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a className={btnFilled} href="/contact">

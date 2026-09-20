@@ -21,7 +21,7 @@ const body = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "Risin Automation — EPCM Systems Integrator",
   description:
-    "Risin Automation is a multi-discipline EPCM firm delivering turnkey projects across Smart Entrance Automation, Solar Energy, Power Infrastructure and Traffic & Road Safety.",
+    "Risin Automation is a multi-discipline EPCM firm delivering turnkey projects across Smart Entrance Automation, Solar Energy, Power Infrastructure, Traffic & Road Safety and Water & Hydromet.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -62,7 +62,7 @@ const details: { icon: DetailIcon; label: string; value: React.ReactNode }[] = [
     icon: "mail",
     label: "Email",
     value: (
-      <a href="mailto:projects@risinautomation.com" className="hover:text-green-dark">
+      <a href="mailto:projects@risinautomation.com" className="hover:text-green">
         projects@risinautomation.com
       </a>
     ),
@@ -72,9 +72,9 @@ const details: { icon: DetailIcon; label: string; value: React.ReactNode }[] = [
     label: "Phone",
     value: (
       <>
-        <a href="tel:03325919059" className="hover:text-green-dark">0332-5919059</a>
+        <a href="tel:+923325919059" className="hover:text-green">+92 332 5919059</a>
         {" · "}
-        <a href="tel:03453164250" className="hover:text-green-dark">0345-3164250</a>
+        <a href="tel:+923453164250" className="hover:text-green">+92 345 3164250</a>
       </>
     ),
   },
@@ -88,15 +88,24 @@ const details: { icon: DetailIcon; label: string; value: React.ReactNode }[] = [
 export default function ContactPage() {
   return (
     <section className="bg-slate py-[clamp(72px,10vh,120px)] text-navy" id="contact">
-      <Wrap className="grid grid-cols-1 items-start gap-[clamp(40px,5vw,72px)] min-[961px]:grid-cols-[.85fr_1.15fr]">
-        {/* Left: intro + reachable details */}
-        <div>
+      <Wrap className="grid grid-cols-1 items-stretch gap-[clamp(40px,5vw,72px)] min-[961px]:grid-cols-[.85fr_1.15fr]">
+        {/* Left: intro + reachable details, over an Islamabad backdrop */}
+        <div className="relative isolate flex flex-col overflow-hidden bg-navy p-[clamp(28px,4vw,48px)] text-white">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/islamabad.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(18,42,61,.72),rgba(18,42,61,.42)_45%,rgba(18,42,61,.82))]" />
+
           <Kick scramble>CONTACT</Kick>
-          <h2 className={`lines ${sectionTitleClass} text-navy`}>
+          <h2 className={`lines ${sectionTitleClass} text-white`}>
             <span className="ln"><span>START WITH</span></span>
             <span className="ln"><span>A SCOPE CALL.</span></span>
           </h2>
-          <p className="reveal mt-5 max-w-[440px] text-steel">
+          <p className="reveal mt-5 max-w-[440px] text-white/75">
             Send a brief — even a rough one. A discipline lead responds within one business day
             with a scope outline and a call slot.
           </p>
@@ -104,20 +113,25 @@ export default function ContactPage() {
           <ul className="reveal mt-10 space-y-5">
             {details.map((d) => (
               <li key={d.label} className="flex gap-3.5">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border border-navy/12 bg-white">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border border-white/20 bg-white/10">
                   <DetailMark name={d.icon} />
                 </span>
                 <span>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-steel-dim">
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-white/50">
                     {d.label}
                   </span>
-                  <span className="mt-1 block max-w-[320px] text-[14px] leading-snug text-navy">
+                  <span className="mt-1 block max-w-[320px] text-[14px] leading-snug text-white">
                     {d.value}
                   </span>
                 </span>
               </li>
             ))}
           </ul>
+
+          <p className="mt-10 flex items-center min-[961px]:mt-auto min-[961px]:pt-10 gap-2.5 text-[10px] uppercase tracking-[0.22em] text-white/40">
+            <span className="h-1.5 w-1.5 shrink-0 bg-green" />
+            Islamabad, Pakistan
+          </p>
         </div>
 
         {/* Right: brief form */}
@@ -178,6 +192,7 @@ export default function ContactPage() {
               <option>Renewable Energy · Solar</option>
               <option>Power Infrastructure</option>
               <option>Traffic &amp; Road Safety</option>
+              <option>Water &amp; Hydromet</option>
               <option>Multi-Discipline / Other</option>
             </select>
           </div>

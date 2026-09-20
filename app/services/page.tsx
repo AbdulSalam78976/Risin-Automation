@@ -4,7 +4,7 @@ import { Domains } from "@/components/sections/Domains";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Risin Automation's four EPCM disciplines — Smart Entrance Automation, Solar Energy, Power Infrastructure and Traffic & Road Safety.",
+    "Risin Automation's five EPCM disciplines — Smart Entrance Automation, Solar Energy, Power Infrastructure, Traffic & Road Safety and Water & Hydromet.",
 };
 
 export default function ServicesPage() {

@@ -10,6 +10,7 @@ const columns = [
       { href: "/services", label: "Solar EPC & O&M" },
       { href: "/services", label: "Power Infrastructure" },
       { href: "/services", label: "Traffic & Road Safety" },
+      { href: "/services", label: "Water & Hydromet" },
     ],
   },
   {
@@ -53,7 +54,7 @@ export function Footer() {
               </Link>
               <p className="mt-4 max-w-[320px] text-[13.5px] text-steel">
                 Multi-discipline EPCM systems integrator. Turnkey delivery from design to
-                execution across four technical domains.
+                execution across five technical domains.
               </p>
             </div>
 
@@ -91,8 +92,8 @@ export function Footer() {
                   <path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 2 6a2 2 0 0 1 2-2Z" />
                 </svg>
                 <span>
-                  <a href="tel:03325919059" className="hover:text-green-dark">0332-5919059</a>,{" "}
-                  <a href="tel:03453164250" className="hover:text-green-dark">0345-3164250</a>
+                  <a href="tel:+923325919059" className="hover:text-green-dark">+92 332 5919059</a>,{" "}
+                  <a href="tel:+923453164250" className="hover:text-green-dark">+92 345 3164250</a>
                 </span>
               </p>
               <div className="mt-4 flex items-center gap-3">

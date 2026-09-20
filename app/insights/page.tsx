@@ -1,45 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Wrap } from "@/components/Wrap";
 import { Kick, sectionTitleClass } from "@/components/Kick";
-import { InsightsTeaser } from "@/components/sections/InsightsTeaser";
 import { btnFilled } from "@/components/btn";
+import { INSIGHTS } from "@/lib/insights";
 
 export const metadata: Metadata = {
   title: "Engineering Insights — Risin Automation",
   description:
-    "Technical whitepapers, SCADA integration guides, solar performance ratio analysis, and high-throughput entrance automation research from Risin Automation.",
+    "Articles from Risin Automation engineers on solar performance in Pakistan's heat, ANPR port gates, load-shedding resilience and smart motorway corridors.",
 };
-
-const ALL_PAPERS = [
-  {
-    category: "WHITE PAPER · SOLAR EPC",
-    title: "Optimizing Performance Ratios in High-Ambient Temperature Climates",
-    summary: "Engineering storage-ready DC microgrid architectures and panel layout strategies to sustain >82% PR during summer heat spikes.",
-    date: "AUG 2026",
-    author: "Risin Renewable Energy Engineering Team",
-  },
-  {
-    category: "TECHNICAL GUIDE · ENTRANCE",
-    title: "High-Throughput ANPR Gate Interlocks for Logistics & Port Terminals",
-    summary: "Integrating deep learning OCR camera gantries with terminal operating systems (TOS) to reduce truck dwell times by over 35%.",
-    date: "JUL 2026",
-    author: "Risin Smart Entrance Division",
-  },
-  {
-    category: "INFRASTRUCTURE BRIEF · POWER",
-    title: "33kV DG Synchronisation & SCADA Ring Main Unit Design",
-    summary: "Zero-interruption automatic transfer switches and predictive thermographic maintenance for mission-critical industrial power grids.",
-    date: "JUN 2026",
-    author: "Power Systems Integration Lead",
-  },
-  {
-    category: "TRAFFIC STUDY · ROAD SAFETY",
-    title: "Adaptive Traffic Control Systems (ATCS) in High-Density Urban Corridors",
-    summary: "Real-time queue length estimation and variable message signal synchronization under NHA and PEC design standards.",
-    date: "MAY 2026",
-    author: "Traffic Systems Directorate",
-  },
-];
 
 export default function InsightsPage() {
   return (
@@ -48,9 +18,9 @@ export default function InsightsPage() {
         <Wrap>
           <div className="max-w-[720px]">
             <Kick scramble>KNOWLEDGE &amp; RESEARCH</Kick>
-            <h2 className={`${sectionTitleClass} text-white`}>ENGINEERING INSIGHTS &amp; WHITEPAPERS.</h2>
-            <p className="mt-5 text-[17px] text-white/80 leading-relaxed">
-              Technical articles, field benchmarks, and architectural blueprints written by Risin Automation engineers across solar, entrance automation, power grids, and smart highways.
+            <h2 className={`${sectionTitleClass} text-white`}>ENGINEERING INSIGHTS.</h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-white/80">
+              How we approach the problems behind our projects — written by Risin Automation engineers across solar, entrance automation, power infrastructure, smart highways and weather & water telemetry.
             </p>
           </div>
         </Wrap>
@@ -60,42 +30,43 @@ export default function InsightsPage() {
         <Wrap>
           <div className="grid grid-cols-1 gap-8 min-[961px]:grid-cols-[1.2fr_.8fr]">
             <div className="space-y-6">
-              {ALL_PAPERS.map((paper) => (
-                <article
-                  key={paper.title}
-                  className="border border-navy/10 bg-slate p-6 sm:p-8 transition-all hover:border-green hover:shadow-lg"
+              {INSIGHTS.map((insight) => (
+                <Link
+                  key={insight.slug}
+                  href={`/insights/${insight.slug}`}
+                  className="group block border border-navy/10 bg-slate p-6 transition-all hover:border-green hover:shadow-lg sm:p-8"
                 >
-                  <div className="flex items-center justify-between text-xs font-mono text-steel-dim mb-3">
-                    <span className="text-green-dark font-semibold">{paper.category}</span>
-                    <span>{paper.date}</span>
+                  <div className="mb-3 flex items-center justify-between text-xs text-steel-dim">
+                    <span className="font-semibold text-green-dark">{insight.category}</span>
+                    <span>{insight.date}</span>
                   </div>
-                  <h3 className="text-xl font-bold font-display text-navy">{paper.title}</h3>
-                  <p className="mt-3 text-sm text-steel leading-relaxed">{paper.summary}</p>
+                  <h3 className="text-xl font-bold font-display text-navy transition-colors group-hover:text-green-dark">
+                    {insight.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-steel">{insight.summary}</p>
                   <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-navy/10 pt-4 text-xs">
-                    <span className="text-steel-dim font-medium">{paper.author}</span>
-                    <a href="#download" className="font-display font-semibold uppercase text-green-dark hover:underline">
-                      Download PDF Specs ↗
-                    </a>
+                    <span className="font-medium text-steel-dim">
+                      {insight.author} · {insight.readTime}
+                    </span>
+                    <span className="font-display font-semibold uppercase text-green-dark">
+                      Read article <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                    </span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
 
-            {/* Sidebar: Subscribe / Request Custom Technical Report */}
-            <div className="sticky top-[calc(var(--navh)+30px)] self-start border border-navy/10 bg-navy p-6 sm:p-8 text-white">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-green">
-                TECHNICAL BRIEFINGS
-              </span>
-              <h3 className="mt-2 text-xl font-bold font-display text-white">
-                Request a Custom Engineering Whitepaper
-              </h3>
-              <p className="mt-3 text-xs text-white/70 leading-relaxed">
-                Need specialized system calculations or design basis reports for your upcoming facility? Connect with our senior engineering team.
+            {/* Sidebar: talk to an engineer */}
+            <div className="self-start border border-navy/10 bg-navy p-6 text-white sm:p-8 min-[961px]:sticky min-[961px]:top-[calc(var(--navh)+30px)]">
+              <span className="text-[10px] uppercase tracking-widest text-green">TALK TO AN ENGINEER</span>
+              <h3 className="mt-2 text-xl font-bold font-display text-white">Have a project like these?</h3>
+              <p className="mt-3 text-xs leading-relaxed text-white/70">
+                Tell us about your site, scale and timeline. A discipline lead will respond within one business day with a scope outline.
               </p>
               <div className="mt-6">
-                <a href="/contact" className={`${btnFilled} w-full justify-center text-center`}>
-                  SPEAK WITH AN ENGINEER ↗
-                </a>
+                <Link href="/contact" className={`${btnFilled} w-full justify-center text-center`}>
+                  START A CONVERSATION ↗
+                </Link>
               </div>
             </div>
           </div>

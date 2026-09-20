@@ -9,9 +9,10 @@ const links = [
   { href: "/", label: "HOME" },
   { href: "/services", label: "SERVICES" },
   { href: "/projects", label: "PROJECTS" },
-  { href: "/about", label: "ABOUT" },
   { href: "/insights", label: "INSIGHTS" },
+   
   { href: "/contact", label: "CONTACT" },
+    { href: "/about", label: "ABOUT" },
 ];
 
 const linkClass =
