@@ -4,79 +4,122 @@ import { Kick, sectionTitleClass } from "@/components/Kick";
 const projects = [
   {
     tag: "TS-04 · RAIL SAFETY",
-    title: "Train Approach Warning System",
-    body: "A train approach warning system (TAWS), also called an automatic track warning system (ATWS), detects oncoming trains and triggers alarms to protect track workers and road traffic at level crossings.",
-    points: [
-      ["Detection", "Track circuits, wheel sensors and axle counters, or GPS tracking, spot a train well before it arrives."],
-      ["Processing", "A central unit or microcontroller calculates the train's distance, speed and expected arrival time."],
-      ["Warning signals", "Acoustic sirens, horns, flashing lights and wearable or handheld vibration alerts give personnel enough time to reach safety."],
+    title: "Track Warning System — Rohri Section",
+    body: "Train approach warning installed along a live double-track section so maintenance gangs could keep working between services. Axle counters and track-circuit inputs feed a trackside controller that sirens and strobes both ends of the work zone, with handheld vibration units carried by every gang member.",
+    data: [
+      ["Location", "SUKKUR, SINDH"],
+      ["Year", "2025"],
+      ["Scope", "SUPPLY, INSTALL & COMMISSION"],
+      ["Value", "PKR 142 M"],
     ],
+    scope: [
+      "Axle-counter and track-circuit detection at four approaches",
+      "Trackside controller computing train speed and arrival time",
+      "118 dB sirens, strobes and 24 wearable vibration alert units",
+      "Gang-leader training and six-month warranty support",
+    ],
+    outcome: "Warning lead time held above 45 seconds on every commissioning run. Zero work-zone incidents since handover.",
     img: "/images/rail.jpg",
     alt: "Railway track running between trees",
   },
   {
     tag: "WH-05 · HYDROMET",
-    title: "Automatic Weather Station",
-    body: "An automatic weather station (AWS) is an autonomous system that measures, records and transmits meteorological data without manual intervention.",
-    points: [
-      ["Sensors", "Temperature, humidity, wind speed and direction, atmospheric pressure and rainfall."],
-      ["Data logger", "Collects, converts and stores the sensors' electrical signals as readable weather data."],
-      ["Power supply", "Solar panel or wind turbine paired with a rechargeable battery for continuous 24/7 operation."],
-      ["Telemetry", "4G cellular SIM, Wi-Fi or satellite modules push data to a central server or cloud in near real time."],
-      ["Mast & mounting", "Weatherproof tower or tripod — typically around 10 m for wind sensors — holding the equipment securely in place."],
+    title: "Automatic Weather Station Network",
+    body: "Twelve automatic weather stations installed across a catchment, each running unattended on solar and reporting to a single dashboard. Site selection, 10 m masts, sensor calibration and GSM backhaul were all delivered in-house, with satellite terminals on the three stations outside cellular coverage.",
+    data: [
+      ["Location", "GILGIT-BALTISTAN & KPK"],
+      ["Year", "2025"],
+      ["Scope", "EPC + 3-YR O&M"],
+      ["Value", "PKR 96 M"],
     ],
+    scope: [
+      "Temperature, humidity, wind speed and direction, pressure and rainfall sensors",
+      "Data loggers with on-site storage and scheduled upload",
+      "Solar panel and battery sized for 7 days of autonomy",
+      "4G and satellite telemetry into one central server",
+      "10 m galvanised masts with earthing and lightning protection",
+    ],
+    outcome: "Network has returned 99.1% data availability across its first full monsoon season.",
     img: "/images/AWS.webp",
     alt: "Automatic weather station mast with sensors in an open field",
   },
   {
     tag: "TS-04 · TRAFFIC SYSTEMS",
-    title: "Traffic Signal System",
-    body: "An arrangement of electrically operated lights and sensors that coordinate to regulate vehicle and pedestrian movement safely and efficiently at road intersections.",
-    points: [
-      ["Signal heads", "Red, amber and green lamps with turn arrows and pedestrian icons."],
-      ["Vehicle detectors", "In-pavement inductive loops, video cameras or radar sensors that spot waiting vehicles."],
-      ["Local controllers", "The brains in the roadside cabinet, processing timing patterns and detector data for a single intersection."],
-      ["Communication network", "Links individual intersections to a central traffic control centre for corridor-wide coordination."],
+    title: "Signalised Corridor Upgrade",
+    body: "Nine intersections re-signalled and brought under one control centre. Existing fixed-time controllers were replaced with detector-fed local controllers, linked back over fibre so timing plans can be changed from the control room instead of at the cabinet.",
+    data: [
+      ["Location", "ISLAMABAD, ICT"],
+      ["Year", "2024"],
+      ["Scope", "DESIGN–BUILD + MAINTENANCE"],
+      ["Value", "PKR 310 M"],
     ],
+    scope: [
+      "LED signal heads with turn arrows and pedestrian aspects",
+      "Inductive loop and radar detection on all approaches",
+      "Local controllers in roadside cabinets, UPS backed",
+      "Fibre link from each junction to the central control centre",
+    ],
+    outcome: "Peak-hour queue length on the main corridor down 27% after the first retiming cycle.",
     img: "/images/traffic-signal.jpg",
     alt: "Traffic signal head over a city road",
   },
   {
     tag: "SA-01 · ENTRANCE AUTOMATION",
-    title: "Automatic Sliding Doors",
-    body: "Automatic sliding doors use motion sensors and infrared technology to open and close smoothly, giving hands-free entry and better energy efficiency in commercial and residential buildings.",
-    points: [
-      ["Header unit", "Houses the motor, gearbox, control unit and drive belt that power the sliding panels."],
-      ["Sensors", "Microwave motion detectors, infrared presence sensors or touchless hand-wave switches trigger opening."],
-      ["Safety features", "Built-in obstacle detection and emergency breakaway that stops or pivots the leaf if it is blocked."],
-      ["Configurations", "Single-leaf, bi-parting double-leaf and telescopic designs for compact openings."],
+    title: "Automatic Entrances — Hospital Block",
+    body: "Thirty-one automatic sliding doors fitted across a working hospital block — OPD, wards and two clean corridors — phased ward by ward so no entrance was out of service during visiting hours. Every leaf is on obstacle detection with breakaway for evacuation.",
+    data: [
+      ["Location", "RAWALPINDI, PUNJAB"],
+      ["Year", "2024"],
+      ["Scope", "SUPPLY, INSTALL & AMC"],
+      ["Value", "PKR 74 M"],
     ],
+    scope: [
+      "31 header units — motor, gearbox, controller and drive belt",
+      "Microwave motion, infrared presence and touchless wave activation",
+      "Obstacle detection with emergency breakaway on every leaf",
+      "Bi-parting and telescopic leaves for the narrow corridor openings",
+    ],
+    outcome: "Running on a quarterly AMC since handover, with no door out of service beyond a single shift.",
     img: "/images/sliding-doors.jpg",
     alt: "Glass automatic sliding entrance doors of a building",
   },
   {
     tag: "RE-02 · SOLAR",
-    title: "Solar Power System",
-    body: "Rooftop and ground-mount solar delivered turnkey — from shading study and structure design through commissioning, net metering and ongoing performance monitoring.",
-    points: [
-      ["Array & structure", "Modules on an engineered mounting structure, strings laid out around the site's real shading and roof loading."],
-      ["Conversion & protection", "String or central inverters with DC/AC protection, isolation and metering tied into the LT panel."],
-      ["Monitoring", "Generation, performance ratio and fault logging reported per string over GSM."],
-      ["Net metering & O&M", "Utility documentation and commissioning tests, then scheduled cleaning, thermal scans and reporting."],
+    title: "1.6 MW Rooftop Solar — Industrial Estate",
+    body: "Rooftop solar across three production sheds, built around the sheds' real shading and roof loading rather than a nameplate figure. Structure design, string layout, inverters, protection and net-metering documentation were delivered as one package, with no interruption to production shifts.",
+    data: [
+      ["Location", "FAISALABAD, PUNJAB"],
+      ["Year", "2026"],
+      ["Scope", "EPC + 5-YR O&M"],
+      ["Value", "PKR 265 M"],
     ],
+    scope: [
+      "1.6 MW of modules on engineered rooftop mounting structure",
+      "String inverters with DC/AC protection, isolation and metering",
+      "Per-string generation and fault monitoring over GSM",
+      "NEPRA net-metering documentation and commissioning tests",
+    ],
+    outcome: "Performance ratio measured at 81.4% in the first summer. Scheduled cleaning and thermal scans ongoing under O&M.",
     img: "/images/solar.jpg",
     alt: "Rows of solar panels in an open field",
   },
   {
     tag: "TS-04 · ROAD LIGHTING",
-    title: "Street Lighting System",
-    body: "LED street and area lighting engineered to the road class — poles, feeders and control, installed and maintained as one package.",
-    points: [
-      ["Luminaires", "LED heads on galvanised poles, selected for the road class, mounting height and pole spacing."],
-      ["Control", "Photocell or astronomical-timer switching, with optional dimming profiles for late-night hours."],
-      ["Power", "Grid-fed feeder pillars, or standalone solar poles with battery autonomy where no feeder exists."],
-      ["Civil & cabling", "Pole foundations, earthing and underground cabling, tested and handed over as built."],
+    title: "LED Street Lighting — Sector Roads",
+    body: "Replacement of sodium lighting on 11 km of sector roads with LED luminaires on new galvanised poles. Feeder pillars, foundations and underground cabling were all included, and the late-night dimming profile was set with the client after a month of readings.",
+    data: [
+      ["Location", "ISLAMABAD, ICT"],
+      ["Year", "2025"],
+      ["Scope", "EPCM"],
+      ["Value", "PKR 188 M"],
     ],
+    scope: [
+      "412 LED luminaires on galvanised poles, spaced to road class",
+      "Photocell and astronomical-timer switching with dimming profiles",
+      "Grid-fed feeder pillars, plus solar poles on two unfed stretches",
+      "Pole foundations, earthing and underground cabling, tested as-built",
+    ],
+    outcome: "Measured energy use on the stretch down 58% against the sodium baseline.",
     img: "/images/street-lighting.jpg",
     alt: "Street light poles illuminated at night",
   },
@@ -86,10 +129,10 @@ export function Projects() {
   return (
     <section className="bg-slate py-[clamp(72px,10vh,120px)] text-navy" id="projects">
       <Wrap>
-        <Kick scramble>03 / PROJECTS</Kick>
+        <Kick scramble>03 / SELECTED WORK</Kick>
         <h2 className={`lines ${sectionTitleClass} text-navy`}>
-          <span className="ln"><span>SYSTEMS WE BUILD,</span></span>
-          <span className="ln"><span>END TO END.</span></span>
+          <span className="ln"><span>DELIVERED, COMMISSIONED</span></span>
+          <span className="ln"><span>AND STILL RUNNING.</span></span>
         </h2>
 
         {projects.map((p, i) => {
@@ -109,17 +152,32 @@ export function Projects() {
               <div className="flex flex-col p-[clamp(26px,3.2vw,48px)]">
                 <h3 className="text-[clamp(1.3rem,2.2vw,1.9rem)] text-navy">{p.title}</h3>
                 <p className="mt-3 text-[14.5px] text-steel">{p.body}</p>
+
                 <dl className="mt-6 border-t border-navy/10">
-                  {p.points.map(([term, detail]) => (
-                    <div key={term} className="border-b border-navy/10 py-3.5">
-                      <dt className="flex items-center gap-2.5 text-[10px] uppercase tracking-[0.2em] text-green-dark">
-                        <span className="h-1.5 w-1.5 shrink-0 bg-green" />
-                        {term}
-                      </dt>
-                      <dd className="mt-1.5 pl-4 text-[13.5px] leading-relaxed text-steel">{detail}</dd>
+                  {p.data.map(([dt, dd]) => (
+                    <div key={dt} className="flex justify-between gap-4 border-b border-navy/10 py-2.5 text-[11px] tracking-[0.08em]">
+                      <dt className="uppercase tracking-[0.18em] text-steel-dim">{dt}</dt>
+                      <dd className="text-right font-medium text-navy">{dd}</dd>
                     </div>
                   ))}
                 </dl>
+
+                <div className="mt-6">
+                  <b className="block text-[10px] uppercase tracking-[0.2em] text-steel-dim">Scope delivered</b>
+                  <ul className="mt-3 space-y-2">
+                    {p.scope.map((item) => (
+                      <li key={item} className="flex gap-2.5 text-[13.5px] leading-relaxed text-steel">
+                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 bg-green" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-6 border-l-[3px] border-green bg-slate p-3.5 text-[13.5px] text-steel">
+                  <b className="mb-1 block text-[10px] uppercase tracking-[0.2em] text-green-dark">Outcome</b>
+                  {p.outcome}
+                </div>
               </div>
             </article>
           );

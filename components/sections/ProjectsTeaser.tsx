@@ -6,22 +6,22 @@ import { btnGhost } from "@/components/btn";
 const projects = [
   {
     tag: "RAIL SAFETY",
-    title: "Train Approach Warning System",
-    note: "DETECTION · SIRENS · WEARABLE ALERTS",
+    title: "Track Warning System — Rohri Section",
+    note: "SUKKUR, SINDH · 2025",
     img: "/images/rail.jpg",
     alt: "Railway track running between trees",
   },
   {
     tag: "HYDROMET",
-    title: "Automatic Weather Station",
-    note: "SENSORS · DATA LOGGER · TELEMETRY",
+    title: "Automatic Weather Station Network",
+    note: "GILGIT-BALTISTAN & KPK · 2025",
     img: "/images/AWS.webp",
     alt: "Automatic weather station mast with sensors in an open field",
   },
   {
     tag: "TRAFFIC SYSTEMS",
-    title: "Traffic Signal System",
-    note: "SIGNAL HEADS · DETECTORS · CONTROLLERS",
+    title: "Signalised Corridor Upgrade",
+    note: "ISLAMABAD, ICT · 2024",
     img: "/images/traffic-signal.jpg",
     alt: "Traffic signal head over a city road",
   },
@@ -34,8 +34,8 @@ export function ProjectsTeaser() {
       <Wrap>
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div className="reveal">
-            <Kick scramble>SYSTEMS WE BUILD</Kick>
-            <h2 className={`${sectionTitleClass} text-navy`}>OUR PROJECTS.</h2>
+            <Kick scramble>PROOF, COMMISSIONED</Kick>
+            <h2 className={`${sectionTitleClass} text-navy`}>SELECTED WORK.</h2>
           </div>
           <Link href="/projects" className={`${btnGhost} reveal`}>
             VIEW ALL PROJECTS <span className="ar">→</span>
