@@ -5,27 +5,28 @@ import { btnGhost } from "@/components/btn";
 
 const projects = [
   {
-    tag: "SOLAR EPC",
-    title: "Helios Logistics Park",
-    location: "FAISALABAD, PUNJAB",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/1f9d5f85f-341d-403c-8387-156f10bb6831.png",
-    alt: "Aerial view of warehouse rooftop solar at sunset",
+    tag: "RAIL SAFETY",
+    title: "Train Approach Warning System",
+    note: "DETECTION · SIRENS · WEARABLE ALERTS",
+    img: "/images/rail.jpg",
+    alt: "Railway track running between trees",
   },
   {
-    tag: "ENTRANCE AUTOMATION",
-    title: "Gateway Container Terminal",
-    location: "KARACHI, SINDH",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/1d7b85fe5-9665-4138-806f-a3129ac6dd70.png",
-    alt: "Automated container terminal gate lanes at dusk",
+    tag: "HYDROMET",
+    title: "Automatic Weather Station",
+    note: "SENSORS · DATA LOGGER · TELEMETRY",
+    img: "/images/AWS.webp",
+    alt: "Automatic weather station mast with sensors in an open field",
   },
   {
     tag: "TRAFFIC SYSTEMS",
-    title: "M-1 Motorway Smart Corridor",
-    location: "PESHAWAR, KPK",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/10797dca9-89c5-4263-a7f8-2cba930e6d6a.png",
-    alt: "Smart highway corridor with gantry lane control signals",
+    title: "Traffic Signal System",
+    note: "SIGNAL HEADS · DETECTORS · CONTROLLERS",
+    img: "/images/traffic-signal.jpg",
+    alt: "Traffic signal head over a city road",
   },
 ];
+
 
 export function ProjectsTeaser() {
   return (
@@ -33,8 +34,8 @@ export function ProjectsTeaser() {
       <Wrap>
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <div className="reveal">
-            <Kick scramble>PROOF, COMMISSIONED</Kick>
-            <h2 className={`${sectionTitleClass} text-navy`}>SELECTED WORK.</h2>
+            <Kick scramble>SYSTEMS WE BUILD</Kick>
+            <h2 className={`${sectionTitleClass} text-navy`}>OUR PROJECTS.</h2>
           </div>
           <Link href="/projects" className={`${btnGhost} reveal`}>
             VIEW ALL PROJECTS <span className="ar">→</span>
@@ -54,7 +55,7 @@ export function ProjectsTeaser() {
                 <span className="absolute left-3 top-3 bg-navy px-2.5 py-1.5 text-[10px] tracking-[0.2em] text-green">{p.tag}</span>
               </div>
               <h3 className="mt-4 text-[18px] text-navy">{p.title}</h3>
-              <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-steel-dim">{p.location}</p>
+              <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-steel-dim">{p.note}</p>
             </Link>
           ))}
         </div>
