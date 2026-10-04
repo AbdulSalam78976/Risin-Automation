@@ -6,8 +6,8 @@ import { btnGhost } from "@/components/btn";
 const projects = [
   {
     tag: "RAIL SAFETY",
-    title: "Track Warning System — Rohri Section",
-    note: "SUKKUR, SINDH · 2025",
+    title: "Track Warning System — Three Divisions",
+    note: "SUKKUR · LAHORE · RAWALPINDI · 2025",
     img: "/images/rail.jpg",
     alt: "Railway track running between trees",
   },

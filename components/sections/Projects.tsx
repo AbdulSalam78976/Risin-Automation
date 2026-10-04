@@ -4,21 +4,21 @@ import { Kick, sectionTitleClass } from "@/components/Kick";
 const projects = [
   {
     tag: "TS-04 · RAIL SAFETY",
-    title: "Track Warning System — Rohri Section",
-    body: "Train approach warning installed along a live double-track section so maintenance gangs could keep working between services. Axle counters and track-circuit inputs feed a trackside controller that sirens and strobes both ends of the work zone, with handheld vibration units carried by every gang member.",
+    title: "Track Warning System ",
+    body: "Train approach warning deployed across the Sukkur, Lahore and Rawalpindi divisions, on live track so maintenance gangs could keep working between services. At each work zone, axle counters and track-circuit inputs feed a trackside controller that sirens and strobes both ends, with handheld vibration units carried by every gang member.",
     data: [
-      ["Location", "SUKKUR, SINDH"],
+      ["Location", "SUKKUR · LAHORE · RAWALPINDI"],
       ["Year", "2025"],
       ["Scope", "SUPPLY, INSTALL & COMMISSION"],
       ["Value", "PKR 142 M"],
     ],
     scope: [
-      "Axle-counter and track-circuit detection at four approaches",
+      "Axle-counter and track-circuit detection on every work-zone approach",
       "Trackside controller computing train speed and arrival time",
-      "118 dB sirens, strobes and 24 wearable vibration alert units",
-      "Gang-leader training and six-month warranty support",
+      "118 dB sirens, strobes and wearable vibration alert units per gang",
+      "Gang-leader training and warranty support at all three divisions",
     ],
-    outcome: "Warning lead time held above 45 seconds on every commissioning run. Zero work-zone incidents since handover.",
+    outcome: "Warning lead time held above 45 seconds on every commissioning run across the three divisions. Zero work-zone incidents since handover.",
     img: "/images/rail.jpg",
     alt: "Railway track running between trees",
   },
