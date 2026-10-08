@@ -15,7 +15,7 @@ const projects = [
     tag: "HYDROMET",
     title: "Automatic Weather Station Network",
     note: "GILGIT-BALTISTAN & KPK · 2025",
-    img: "/images/AWS.webp",
+    img: "/images/water.jpg",
     alt: "Automatic weather station mast with sensors in an open field",
   },
   {

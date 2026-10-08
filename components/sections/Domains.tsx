@@ -299,7 +299,7 @@ const domains: Domain[] = [
       { name: "River & Canal Gauging", mark: "staffGauge", note: "Level, flow & discharge telemetry" },
       { name: "Flood & Level Alerting", mark: "levelAlert", note: "Thresholds, SMS & dashboards" },
     ],
-    img: "/images/hydromet.webp",
+    img: "/images/hydromet.jpg",
     alt: "Aerial view of an irrigation canal running between agricultural fields",
   },
 ];

@@ -34,7 +34,7 @@ const services: { title: string; body: string; img?: string; alt?: string }[] = 
   {
     title: "Water & Hydromet",
     body: "Automatic weather stations, canal and river gauging, and level alerting — solar-powered sites reporting into SCADA.",
-    img: "/images/aws.webp",
+    img: "/images/aws.jpg",
     alt: "Concrete irrigation canal carrying water through a green valley",
   },
 ];

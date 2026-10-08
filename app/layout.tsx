@@ -27,7 +27,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="min-h-screen overflow-x-hidden bg-white font-body text-base leading-relaxed text-navy selection:bg-green selection:text-white">
+      {/* Browser extensions (e.g. ColorZilla) add attributes to <body> before hydration. */}
+      <body suppressHydrationWarning className="min-h-screen overflow-x-hidden bg-white font-body text-base leading-relaxed text-navy selection:bg-green selection:text-white">
         <Nav />
         <main id="top">{children}</main>
         <Footer />
