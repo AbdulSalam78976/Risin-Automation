@@ -62,9 +62,9 @@ export function Process() {
       <Wrap className="grid grid-cols-1 gap-[clamp(26px,3vw,52px)] min-[961px]:grid-cols-[.88fr_1.12fr]">
 
         {/* Left Green Panel */}
-        <div className="sticky top-[calc(var(--navh)+24px)] self-start bg-[#3E5F44] p-[clamp(22px,2.4vw,32px)] text-white max-[960px]:static">
+        <div className="sticky top-[calc(var(--navh)+24px)] self-start bg-[#1e7e34] p-[clamp(22px,2.4vw,32px)] text-white max-[960px]:static">
 
-          <Kick scramble>02 / METHOD</Kick>
+          
 
           <h2 className={`lines ${sectionTitleClass} text-white`}>
             <span className="ln">
