@@ -3,7 +3,9 @@ import { Projects } from "@/components/sections/Projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Selected EPCM projects delivered and maintained by Risin Automation.",
+  description:
+    "Train approach warning, automatic weather stations, traffic signals, automatic entrances, solar and street lighting projects delivered by Risin Automation across Pakistan.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {

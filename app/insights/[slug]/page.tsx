@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Wrap } from "@/components/Wrap";
 import { btnFilled } from "@/components/btn";
 import { INSIGHTS, getInsight } from "@/lib/insights";
+import { SITE_URL } from "@/app/layout";
 
 // Only the articles listed in lib/insights.ts exist; any other slug is a 404.
 export const dynamicParams = false;
@@ -18,7 +19,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const insight = getInsight(slug);
   if (!insight) return {};
-  return { title: `${insight.title} — Risin Automation`, description: insight.summary };
+  const url = `/insights/${insight.slug}`;
+  return {
+    title: insight.title,
+    description: insight.summary,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: insight.title,
+      description: insight.summary,
+      authors: [insight.author],
+      section: insight.category,
+    },
+    twitter: { card: "summary_large_image", title: insight.title, description: insight.summary },
+  };
 }
 
 export default async function InsightArticlePage({ params }: Props) {
@@ -28,8 +43,25 @@ export default async function InsightArticlePage({ params }: Props) {
 
   const more = INSIGHTS.filter((i) => i.slug !== insight.slug).slice(0, 3);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: insight.title,
+    description: insight.summary,
+    articleSection: insight.category,
+    author: { "@type": "Person", name: insight.author },
+    publisher: { "@id": `${SITE_URL}/#organisation` },
+    mainEntityOfPage: `${SITE_URL}/insights/${insight.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // Static article data from lib/insights.ts — not user input.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       {/* Article header */}
       <section className="bg-navy py-[clamp(56px,8vh,96px)] text-white">
         <Wrap>

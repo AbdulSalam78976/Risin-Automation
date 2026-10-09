@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { LegalLayout, type LegalSection } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Risin Automation",
+  title: "Privacy Policy",
   description: "How Risin Automation collects, uses and protects information submitted through this site.",
+  alternates: { canonical: "/privacy" },
 };
 
 const sections: LegalSection[] = [
@@ -92,7 +93,7 @@ const sections: LegalSection[] = [
       <p>
         You may request access to, correction of, or deletion of any information you&apos;ve
         submitted to us at any time by emailing{" "}
-        <a href="mailto:projects@risinautomation.com">projects@risinautomation.com</a>.
+        <a href="mailto:info@risinautomation.com">info@risinautomation.com</a>.
       </p>
     ),
   },
@@ -125,7 +126,7 @@ const sections: LegalSection[] = [
         Questions about this policy can be directed to Risin Automation, Office # 01, 1st Floor,
         Kashmir Mention Plaza, Commercial Area, Pakistan Town, Islamabad, by phone at
         0332-5919059 / 0345-3164250, or by email at{" "}
-        <a href="mailto:projects@risinautomation.com">projects@risinautomation.com</a>.
+        <a href="mailto:info@risinautomation.com">info@risinautomation.com</a>.
       </p>
     ),
   },

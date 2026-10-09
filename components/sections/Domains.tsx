@@ -243,7 +243,7 @@ const domains: Domain[] = [
       { name: "Hermetic & ICU Doors", mark: "hermeticDoors" as const, note: "Sealed clinical & cleanroom" },
       { name: "Platform Screen Doors", mark: "platformScreen" as const, note: "Transit platform edge safety" },
     ],
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/1838948a5-380c-4607-944f-c6b18a399895.png",
+    img: "/images/entrance-automation.jpg",
     alt: "Automated facility entrance with boom barrier and ANPR camera",
   },
   {
@@ -257,7 +257,7 @@ const domains: Domain[] = [
       { name: "VFD Solar Pumping", mark: "vfdPump" as const, note: "Irrigation & industrial water" },
       { name: "Inverters & Battery Storage", mark: "battery" as const, note: "Grid-tied, hybrid & backup" },
     ],
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/12bbdaba2-32cd-405e-b281-2ff4d0102297.png",
+    img: "/images/solar-energy.jpg",
     alt: "Ground-mount solar farm at golden hour with engineer",
   },
   {
@@ -271,7 +271,7 @@ const domains: Domain[] = [
       { name: "SCADA & Energy Analytics", mark: "scada" as const, note: "Remote monitoring & load control" },
       { name: "Transformer & DG Services", mark: "transformer" as const, note: "Synchronisation & overhauling" },
     ],
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/19e34662f-2370-4cdc-930b-f64160a6f5e5.png",
+    img: "/images/power-infrastructure.jpg",
     alt: "Electrical substation with engineer reviewing switchgear",
   },
   {
@@ -285,7 +285,7 @@ const domains: Domain[] = [
       { name: "Street Lighting", mark: "streetLight" as const, note: "LED poles & smart dimming" },
       { name: "Fire Protection Systems", mark: "fireProtection" as const, note: "Detection & suppression" },
     ],
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/198909bfb-022c-4a1a-acb3-a1ecc5c26506.png",
+    img: "/images/traffic-road-safety.jpg",
     alt: "Smart intersection at night with intelligent signals and light trails",
   },
   {
@@ -311,10 +311,10 @@ export function Domains() {
         <div className="mb-14 grid grid-cols-1 items-end gap-10 min-[901px]:grid-cols-[1.2fr_.8fr]">
           <div>
             <Kick scramble>01 / CAPABILITIES</Kick>
-            <h2 className={`lines ${sectionTitleClass} text-navy`}>
+            <h1 className={`lines ${sectionTitleClass} text-navy`}>
               <span className="ln"><span>FIVE DISCIPLINES.</span></span>
               <span className="ln"><span>ONE ACCOUNTABLE PARTNER.</span></span>
-            </h2>
+            </h1>
           </div>
           <p className="reveal text-[15.5px] text-steel">
             Most integrators stop at installation. Risin owns the entire chain — engineering,

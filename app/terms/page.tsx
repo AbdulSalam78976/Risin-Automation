@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { LegalLayout, type LegalSection } from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — Risin Automation",
+  title: "Terms & Conditions",
   description: "Terms governing use of the Risin Automation website and submission of project inquiries.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections: LegalSection[] = [
@@ -82,7 +83,7 @@ const sections: LegalSection[] = [
         Questions about these terms can be directed to Risin Automation, Office # 01, 1st Floor,
         Kashmir Mention Plaza, Commercial Area, Pakistan Town, Islamabad, by phone at
         0332-5919059 / 0345-3164250, or by email at{" "}
-        <a href="mailto:projects@risinautomation.com">projects@risinautomation.com</a>.
+        <a href="mailto:info@risinautomation.com">info@risinautomation.com</a>.
       </p>
     ),
   },

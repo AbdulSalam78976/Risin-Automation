@@ -236,24 +236,6 @@ export function ClientEffects() {
     stepEls.forEach((s) => stepObs.observe(s));
     cleanups.push(() => stepObs.disconnect());
 
-    const form = document.getElementById("briefForm");
-    const onSubmit = (ev: Event) => {
-      ev.preventDefault();
-      const btn = document.getElementById("sendBtn");
-      if (btn) {
-        btn.innerHTML = "TRANSMITTING ▮▮▮";
-        btn.style.pointerEvents = "none";
-      }
-      setTimeout(
-        () => {
-          if (btn) btn.innerHTML = "✓ BRIEF TRANSMITTED";
-          document.getElementById("formOk")?.classList.add("show");
-        },
-        reduced ? 0 : 900
-      );
-    };
-    form?.addEventListener("submit", onSubmit);
-    cleanups.push(() => form?.removeEventListener("submit", onSubmit));
 
     return () => cleanups.forEach((fn) => fn());
   }, [pathname]);

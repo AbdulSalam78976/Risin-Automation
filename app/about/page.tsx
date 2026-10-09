@@ -3,9 +3,10 @@ import { Wrap } from "@/components/Wrap";
 import { Kick, sectionTitleClass } from "@/components/Kick";
 
 export const metadata: Metadata = {
-  title: "About — Risin Automation",
+  title: "About",
   description:
     "Founded in 2012, Risin Automation is 85 engineers, designers and field crews delivering multi-discipline EPCM projects from Islamabad.",
+  alternates: { canonical: "/about" },
 };
 
 const principles = [
@@ -65,10 +66,10 @@ export default function AboutPage() {
         </div>
         <div>
           <Kick scramble>ABOUT RISIN AUTOMATION</Kick>
-          <h2 className={`lines ${sectionTitleClass} text-navy`}>
+          <h1 className={`lines ${sectionTitleClass} text-navy`}>
             <span className="ln"><span>BUILT BY ENGINEERS,</span></span>
             <span className="ln"><span>RUN LIKE A CONTROL ROOM.</span></span>
-          </h2>
+          </h1>
           <p className="reveal mt-4.5 max-w-[540px] text-steel">
             Risin Automation is a team of{" "}
             <b className="font-medium text-navy">engineers, designers and field crews</b>{" "}
@@ -119,7 +120,7 @@ export default function AboutPage() {
       <div className="absolute inset-0" aria-hidden="true">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/19e34662f-2370-4cdc-930b-f64160a6f5e5.png"
+          src="/images/power-infrastructure.jpg"
           alt=""
           className="h-full w-full object-cover"
         />

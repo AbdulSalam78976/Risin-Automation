@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Risin Automation's five EPCM disciplines — Smart Entrance Automation, Solar Energy, Power Infrastructure, Traffic & Road Safety and Water & Hydromet.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

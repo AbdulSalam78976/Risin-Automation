@@ -40,7 +40,7 @@ const projects = [
       "10 m galvanised masts with earthing and lightning protection",
     ],
     outcome: "Network has returned 99.1% data availability across its first full monsoon season.",
-    img: "/images/AWS.webp",
+    img: "/images/aws.jpg",
     alt: "Automatic weather station mast with sensors in an open field",
   },
   {
@@ -130,10 +130,10 @@ export function Projects() {
     <section className="bg-slate py-[clamp(72px,10vh,120px)] text-navy" id="projects">
       <Wrap>
         <Kick scramble>03 / SELECTED WORK</Kick>
-        <h2 className={`lines ${sectionTitleClass} text-navy`}>
+        <h1 className={`lines ${sectionTitleClass} text-navy`}>
           <span className="ln"><span>DELIVERED, COMMISSIONED</span></span>
           <span className="ln"><span>AND STILL RUNNING.</span></span>
-        </h2>
+        </h1>
 
         {projects.map((p, i) => {
           const swapped = i % 2 === 1;

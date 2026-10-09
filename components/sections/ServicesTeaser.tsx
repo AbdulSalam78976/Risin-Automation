@@ -10,25 +10,25 @@ const services: { title: string; body: string; img?: string; alt?: string }[] = 
   {
     title: "Smart Entrance Automation",
     body: "Boom barriers, sliding gates, ANPR capture and access control unified under one management layer.",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/1838948a5-380c-4607-944f-c6b18a399895.png",
+    img: "/images/entrance-automation.jpg",
     alt: "Automated facility entrance with boom barrier and ANPR camera",
   },
   {
     title: "Renewable Energy · Solar",
     body: "Rooftop and ground-mount solar, delivered turnkey with bankable performance ratios.",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/12bbdaba2-32cd-405e-b281-2ff4d0102297.png",
+    img: "/images/solar-energy.jpg",
     alt: "Ground-mount solar farm at golden hour",
   },
   {
     title: "Power Infrastructure",
     body: "Substations, switchgear, DG synchronisation and SCADA kept inside tolerance and on schedule.",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/19e34662f-2370-4cdc-930b-f64160a6f5e5.png",
+    img: "/images/power-infrastructure.jpg",
     alt: "Electrical substation with engineer reviewing switchgear",
   },
   {
     title: "Traffic & Road Safety",
     body: "Adaptive signals, VMS corridors and ANPR enforcement engineered to NHA and PEC practice.",
-    img: "https://image.qwenlm.ai/public_source/f71ff394-9c0e-452a-a891-b2d8c550e89b/198909bfb-022c-4a1a-acb3-a1ecc5c26506.png",
+    img: "/images/traffic-road-safety.jpg",
     alt: "Smart intersection at night with intelligent signals",
   },
   {

@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-navy/10">
       <div className="absolute inset-0 z-0 overflow-hidden bg-navy" aria-hidden="true">
-        <video autoPlay muted loop playsInline poster="/hero-poster.jpg" className="absolute inset-0 h-full w-full object-cover">
+        <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover">
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,42,61,.86),rgba(18,42,61,.66)_30%,rgba(18,42,61,.88))]" />

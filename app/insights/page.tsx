@@ -6,9 +6,10 @@ import { btnFilled } from "@/components/btn";
 import { INSIGHTS } from "@/lib/insights";
 
 export const metadata: Metadata = {
-  title: "Engineering Insights — Risin Automation",
+  title: "Engineering Insights",
   description:
     "Articles from Risin Automation engineers on solar performance in Pakistan's heat, ANPR port gates, load-shedding resilience and smart motorway corridors.",
+  alternates: { canonical: "/insights" },
 };
 
 export default function InsightsPage() {
@@ -18,7 +19,7 @@ export default function InsightsPage() {
         <Wrap>
           <div className="max-w-[720px]">
             <Kick scramble>KNOWLEDGE &amp; RESEARCH</Kick>
-            <h2 className={`${sectionTitleClass} text-white`}>ENGINEERING INSIGHTS.</h2>
+            <h1 className={`${sectionTitleClass} text-white`}>ENGINEERING INSIGHTS.</h1>
             <p className="mt-5 text-[17px] leading-relaxed text-white/80">
               How we approach the problems behind our projects — written by Risin Automation engineers across solar, entrance automation, power infrastructure, smart highways and weather & water telemetry.
             </p>
