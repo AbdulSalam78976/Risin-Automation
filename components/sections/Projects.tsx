@@ -30,7 +30,7 @@ const projects = [
       ["Location", "GILGIT-BALTISTAN & KPK"],
       ["Year", "2025"],
       ["Scope", "EPC + 3-YR O&M"],
-      ["Value", "PKR 96 M"],
+      ["Value", "PKR 200 M"],
     ],
     scope: [
       "Temperature, humidity, wind speed and direction, pressure and rainfall sensors",

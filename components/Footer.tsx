@@ -96,6 +96,15 @@ export function Footer() {
                   <a href="tel:+923453164250" className="hover:text-green-dark">+92 345 3164250</a>
                 </span>
               </p>
+              <p className="mt-2.5 flex items-center gap-2.5 text-[13.5px] text-steel">
+                <svg className="h-4 w-4 shrink-0 text-green" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <rect x="2.5" y="5" width="19" height="14" rx="1.5" />
+                  <path d="m3 6.5 9 6 9-6" />
+                </svg>
+                <a href="mailto:info@risinautomation.com" className="hover:text-green-dark">
+                  info@risinautomation.com
+                </a>
+              </p>
               <div className="mt-4 flex items-center gap-3">
                 {socials.map((s) => (
                   <a

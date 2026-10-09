@@ -14,7 +14,7 @@ const services: { title: string; body: string; img?: string; alt?: string }[] = 
     alt: "Automated facility entrance with boom barrier and ANPR camera",
   },
   {
-    title: "Renewable Energy · Solar",
+    title: "Renewable Energy",
     body: "Rooftop and ground-mount solar, delivered turnkey with bankable performance ratios.",
     img: "/images/solar-energy.jpg",
     alt: "Ground-mount solar farm at golden hour",
